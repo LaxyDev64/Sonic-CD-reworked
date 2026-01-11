@@ -1,0 +1,9 @@
+#include "ReworkedGlobals.as"
+
+void DrawReworkedHUD() {
+    if (hudStyle != HUD_REWORKED)
+        return;
+
+    // Placeholder
+    DrawText(8, 8, "REWORKED MODE", 0xFFFFFF);
+}

@@ -1,0 +1,3 @@
+void Hello() {
+    Print("REWORKED SCRIPT LOADED");
+}

@@ -1,0 +1,11 @@
+void SaveReworkedSettings() {
+    UserDB::SetInt("RW_Physics", physicsMode);
+    UserDB::SetInt("RW_TimeTravel", timeTravelMode);
+    UserDB::SetInt("RW_HUD", hudStyle);
+}
+
+void LoadReworkedSettings() {
+    physicsMode = UserDB::GetInt("RW_Physics", PHYSICS_REWORKED);
+    timeTravelMode = UserDB::GetInt("RW_TimeTravel", TIMETRAVEL_REWORKED);
+    hudStyle = UserDB::GetInt("RW_HUD", HUD_REWORKED);
+}

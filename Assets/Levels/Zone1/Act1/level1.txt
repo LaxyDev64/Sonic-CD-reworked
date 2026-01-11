@@ -1,0 +1,18 @@
+# Level1 - Zona de prueba
+# Coordenadas base
+PlayerSpawn: 100, 200
+
+# Objetos
+Rings: 200, 200
+Rings: 300, 180
+Booster: 400, 200
+Checkpoint: 500, 200
+
+# Enemigos
+Enemy: 600, 200, PatrolLeftRight
+
+# Time Travel Trigger
+TimeTrigger: 700, 200, Past, Present
+
+# Fin de nivel
+End: 1000, 200

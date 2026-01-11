@@ -1,0 +1,21 @@
+#include "ReworkedGlobals.as"
+
+array<string> physicsStrings = { "CD", "REWORKED", "S3", "S2" };
+array<string> timeTravelStrings = { "ORIGINAL", "REWORKED" };
+array<string> hudStrings = { "CLASSIC", "REWORKED" };
+
+void NextPhysics() {
+    physicsMode = (physicsMode + 1) % 3;
+}
+
+void PrevPhysics() {
+    physicsMode = (physicsMode + 2) % 3;
+}
+
+void NextTimeTravel() {
+    timeTravelMode = (timeTravelMode + 1) % 2;
+}
+
+void NextHUD() {
+    hudStyle = (hudStyle + 1) % 2;
+}
