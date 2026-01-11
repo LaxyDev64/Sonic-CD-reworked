@@ -3,8 +3,8 @@ sub ObjectStartup
 	SetMusicTrack("US/SpecialStage.ogg",1,270972)
    
    // ==== SONIC CD REWORKED ====
-       Options.ReworkedPhysics = 1
-     Options.ReworkedTimeTravel = 1
+      Options.ReworkedPhysics = 1
+      Options.ReworkedTimeTravel = 1
       Options.ReworkedHUD = 1
     // ==========================
 
@@ -19,3 +19,4 @@ sub ObjectStartup
 #endplatform
 	Object[0].Value2=0
 endsub
+
