@@ -1,0 +1,21 @@
+// LaxyDev64.lx 
+// Escena: sin utilizar
+// Descripción: muestra un mensaje de bienvenida en la consola
+
+function main() {
+    console.log("¡Hola! Bienvenido al proyecto.");
+}
+
+main();
+// Prevenir navegación hacia atrás
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1);
+};
+
+// End of LaxyDev64.lx
+// don't use this file
+// this file is not linked in the html
+// this is credits to the developer
+// LaxyDev64 2026
+// thanks for using LaxyDev64 projects
