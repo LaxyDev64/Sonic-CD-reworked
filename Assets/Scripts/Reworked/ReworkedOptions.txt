@@ -1,4 +1,4 @@
-#include "ReworkedGlobals.as"
+#include "ReworkedGlobals.txt"
 
 array<string> physicsStrings = { "CD", "REWORKED", "S3", "S2" };
 array<string> timeTravelStrings = { "ORIGINAL", "REWORKED" };

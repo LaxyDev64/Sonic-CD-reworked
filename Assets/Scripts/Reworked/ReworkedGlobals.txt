@@ -17,7 +17,21 @@ enum HUDStyle {
     HUD_REWORKED = 1
 }
 
+enum TrophiesMode {
+    TROPHIES_OFF = 0,
+    TROPHIES_ON = 1
+}
+
+enum MusicMode {
+    MUSIC_ORIGINAL = 0,
+    MUSIC_JP = 1,
+    MUSIC_US = 2,
+    MUSIC_NEW = 3
+}
+
 // Default values
 int physicsMode = PHYSICS_REWORKED;
 int timeTravelMode = TIMETRAVEL_REWORKED;
 int hudStyle = HUD_REWORKED;
+int trophiesMode = TROPHIES_ON;
+int musicMode = MUSIC_ORIGINAL;

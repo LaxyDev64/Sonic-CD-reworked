@@ -1,0 +1,69 @@
+#include "ReworkedGlobals.txt"
+
+// Trophy/Achievement system for Sonic CD Reworked
+// Based on Sonic CD mobile achievements, but customizable
+
+class Trophy {
+    string name;
+    string description;
+    bool unlocked;
+    int conditionType; // 0: level complete, 1: collect all emeralds, etc.
+    int conditionValue; // e.g., zone number, count, etc.
+    
+    Trophy(string n, string d, int type, int value) {
+        name = n;
+        description = d;
+        unlocked = false;
+        conditionType = type;
+        conditionValue = value;
+    }
+}
+
+array<Trophy> trophies;
+
+void InitTrophies() {
+    trophies.resize(0);
+    
+    // Original Sonic CD mobile achievements (customizable)
+    trophies.insertLast(Trophy("Palmtree Panic", "Complete Palmtree Panic Zone 1", 0, 1));
+    trophies.insertLast(Trophy("Collision Chaos", "Complete Collision Chaos Zone 1", 0, 2));
+    trophies.insertLast(Trophy("Tidal Tempest", "Complete Tidal Tempest Zone 1", 0, 3));
+    trophies.insertLast(Trophy("Quartz Quadrant", "Complete Quartz Quadrant Zone 1", 0, 4));
+    trophies.insertLast(Trophy("Wacky Workbench", "Complete Wacky Workbench Zone 1", 0, 5));
+    trophies.insertLast(Trophy("Stardust Speedway", "Complete Stardust Speedway Zone 1", 0, 6));
+    trophies.insertLast(Trophy("Metallic Madness", "Complete Metallic Madness Zone 1", 0, 7));
+    trophies.insertLast(Trophy("Dr. Eggman's Fortress", "Complete Stardust Speedway Zone 3", 0, 8));
+    trophies.insertLast(Trophy("All Stages Clear!", "Complete all Zones", 1, 7)); // 7 zones
+    trophies.insertLast(Trophy("Treasure Hunter", "Collect all Chaos Emeralds", 2, 7)); // 7 emeralds
+    trophies.insertLast(Trophy("Paradise Found", "Complete all Present Zones", 3, 7)); // Present zones
+    trophies.insertLast(Trophy("Just One Hug", "Collect all Time Stones", 4, 7)); // 7 stones
+    
+    // Add your custom trophies here
+    // Example: trophies.insertLast(Trophy("Custom Trophy", "Description", conditionType, conditionValue));
+}
+
+void CheckTrophyUnlock(int type, int value) {
+    if (trophiesMode != TROPHIES_ON)
+        return;
+        
+    for (uint i = 0; i < trophies.length(); i++) {
+        if (!trophies[i].unlocked && trophies[i].conditionType == type && trophies[i].conditionValue == value) {
+            trophies[i].unlocked = true;
+            // TODO: Show notification or play sound
+            print("Trophy unlocked: " + trophies[i].name);
+        }
+    }
+}
+
+void DrawTrophies() {
+    if (trophiesMode != TROPHIES_ON)
+        return;
+        
+    // Placeholder for trophy display
+    int y = 8;
+    for (uint i = 0; i < trophies.length(); i++) {
+        string status = trophies[i].unlocked ? "[UNLOCKED]" : "[LOCKED]";
+        DrawText(8, y, status + " " + trophies[i].name, 0xFFFFFF);
+        y += 16;
+    }
+}

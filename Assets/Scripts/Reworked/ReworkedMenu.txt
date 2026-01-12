@@ -1,0 +1,55 @@
+// New menu system for Sonic CD Reworked
+// ...existing code...
+[Main Menu]
+Title: Sonic CD Reworked
+Background: mobile_bg.png
+Music: menu_theme.ogg
+
+[Buttons]
+- Start Game
+  Action: LoadLevel(Zone1)
+- Options
+  Action: OpenOptionsFromFile("ReworkedOptions.txt")
+- Trophies
+  Action: OpenTrophiesFromFile("ReworkedTrophies.txt") 
+- Mods
+  Action: OpenModsFolder("Mods/")
+- Exit
+  Action: QuitGame()
+
+[Mods Section]
+Title: Mods
+Description: Select and enable mods from the Mods folder.
+ListMods: ScanFolder("Mods/")
+EnableMod: LoadMod(selected_mod)
+Back: ReturnToMainMenu()
+// ...existing code...
+
+
+// filepath: 
+// Opciones del juego leídas por el menú
+
+[Options]
+- Volume
+  Type: slider
+  Key: audio_volume
+  Default: 80
+- Music
+  Type: toggle
+  Key: music_enabled
+  Default: true
+- SFX
+  Type: toggle
+  Key: sfx_enabled
+  Default: true
+- Controls
+  Type: submenu
+  File: ReworkedControls.txt
+- Graphics
+  Type: submenu
+  File: ReworkedGraphics.txt
+- Mods
+  Type: action
+  Action: OpenModsFolder("Mods/")
+- Back
+  Action: ReturnToMainMenu()

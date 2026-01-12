@@ -1,11 +1,22 @@
+#include "ReworkedTrophies.txt"
+#include "ReworkedSound.txt"
+
 void SaveReworkedSettings() {
     UserDB::SetInt("RW_Physics", physicsMode);
     UserDB::SetInt("RW_TimeTravel", timeTravelMode);
     UserDB::SetInt("RW_HUD", hudStyle);
+    UserDB::SetInt("RW_Trophies", trophiesMode);
+    UserDB::SetInt("RW_Music", musicMode);
 }
 
 void LoadReworkedSettings() {
     physicsMode = UserDB::GetInt("RW_Physics", PHYSICS_REWORKED);
     timeTravelMode = UserDB::GetInt("RW_TimeTravel", TIMETRAVEL_REWORKED);
     hudStyle = UserDB::GetInt("RW_HUD", HUD_REWORKED);
+    trophiesMode = UserDB::GetInt("RW_Trophies", TROPHIES_ON);
+    musicMode = UserDB::GetInt("RW_Music", MUSIC_ORIGINAL);
+    
+    InitTrophies();
+    // Initialize music if needed
 }
+

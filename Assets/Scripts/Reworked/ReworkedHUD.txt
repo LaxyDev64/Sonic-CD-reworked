@@ -1,4 +1,4 @@
-#include "ReworkedGlobals.as"
+#include "ReworkedGlobals.txt"
 
 void DrawReworkedHUD() {
     if (hudStyle != HUD_REWORKED)

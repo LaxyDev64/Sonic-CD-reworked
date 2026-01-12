@@ -1,0 +1,38 @@
+#include "ReworkedGlobals.txt"
+
+// Music system for Sonic CD Reworked
+// Supports Original, JP, US, and New soundtracks
+
+string GetMusicFile(string baseName) {
+    string suffix = "";
+    
+    switch (musicMode) {
+        case MUSIC_ORIGINAL:
+            suffix = "_Original";
+            break;
+        case MUSIC_JP:
+            suffix = "_JP";
+            break;
+        case MUSIC_US:
+            suffix = "_US";
+            break;
+        case MUSIC_NEW:
+            suffix = "_New";
+            break;
+    }
+    
+    return baseName + suffix + ".wav"; // Assuming .wav files, adjust as needed
+}
+
+void PlayReworkedMusic(string trackName) {
+    string musicFile = GetMusicFile(trackName);
+    // Assuming there's a PlayMusic function in the engine
+    // PlayMusic(musicFile);
+    print("Playing music: " + musicFile);
+}
+
+void SetMusicMode(int mode) {
+    musicMode = mode;
+    // Optionally, restart current music with new mode
+    // PlayReworkedMusic(currentTrack);
+}
